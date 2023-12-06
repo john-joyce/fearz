@@ -659,6 +659,7 @@ class Population(PopParams):
         
         avg_counts = avg_counts/self.n_sims
         self.counts = avg_counts
+        print(self.counts)
         return avg_counts, fixation_time
 
     ###########################################################################
