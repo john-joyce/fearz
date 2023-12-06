@@ -654,12 +654,12 @@ class Population(PopParams):
             fixation_time.append(mm)
 
             if self.plot is True:
-                # print(type(counts))
+                print(type(counts))
                 self.plot_timecourse(counts_t=counts)
         
         avg_counts = avg_counts/self.n_sims
         self.counts = avg_counts
-        print(self.counts)
+        
         return avg_counts, fixation_time
 
     ###########################################################################
