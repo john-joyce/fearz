@@ -523,15 +523,37 @@ class Population(PopParams):
         
         if (np.mod(mm*self.timestep_scale,self.passage_time) == 0 
             and not mm == 0 and self.passage):
-
-            conc = np,divide(conc, self.dilution)
             counts = np.divide(counts,self.dilution)
             counts[counts<1] == 0
             counts = [int(c) for c in counts]
             counts = np.array(counts)
 
-        return counts, conc
+        return counts
 
+    def passage_conc(self,mm,conc):
+        """
+        If self.passage is true, dilute conc according to self.dilution when
+        the timestep is a multiple of self.passage_time.
+
+        Parameters
+        ----------
+        mm : int
+            Timestep.
+        conc : conc
+
+        Returns
+        -------
+        conc
+
+        """
+        
+        if (np.mod(mm*self.timestep_scale,self.passage_time) == 0 
+            and not mm == 0 and self.passage):
+            conc = np.divide(conc,self.dilution)
+            conc[conc<1] == 0
+            conc = [int(c) for c in conc]
+
+        return conc
     ###########################################################################
     # core evolutionary model
     
