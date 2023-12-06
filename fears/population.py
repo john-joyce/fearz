@@ -524,12 +524,13 @@ class Population(PopParams):
         if (np.mod(mm*self.timestep_scale,self.passage_time) == 0 
             and not mm == 0 and self.passage):
 
+            conc = np,divide(conc, self.dilution)
             counts = np.divide(counts,self.dilution)
             counts[counts<1] == 0
             counts = [int(c) for c in counts]
             counts = np.array(counts)
 
-        return counts
+        return counts, conc
 
     ###########################################################################
     # core evolutionary model
