@@ -749,8 +749,8 @@ class Population(PopParams):
         curve, u = pharm.gen_curves(self)
         return curve, u
     
-    def gen_passage_drug_protocol(self):
-        drug_curve = pharm.gen_passage_drug_protocol(self)
+    def gen_passage_drug_protocol(self,dc=None):
+        drug_curve = pharm.gen_passage_drug_protocol(self,dc=None)
         return drug_curve
 
     def set_drug_curve(self):
