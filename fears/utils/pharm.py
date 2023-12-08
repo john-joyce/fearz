@@ -205,14 +205,7 @@ def gen_curves(pop):
     return curve, u
 
 def gen_passage_drug_protocol(pop,dc=None):
-    """Generated drug dose over time when simulating cell passaging
-    Drug concentration is constant between cell transfers (determined by pop.passage_time)
-    Args:
-        pop (population): Population class object
-        dc (numpy array, optional): Drug concentration curve. If None, generates a new one.
-    Returns:
-        numpy array: drug concentration curve
-    """
+
     drug_curve = np.zeros(pop.n_timestep)
     gt = 0 # time in growth phase
     tc = 0 # time for calculating drug concentration
