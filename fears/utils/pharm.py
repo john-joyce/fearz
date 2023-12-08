@@ -212,7 +212,7 @@ def gen_passage_drug_protocol(pop,dc=None):
         dc (numpy array, optional): Drug concentration curve. If None, generates a new one.
     Returns:
         numpy array: drug concentration curve
-    “”"
+    """
     drug_curve = np.zeros(pop.n_timestep)
     gt = 0 # time in growth phase
     tc = 0 # time for calculating drug concentration
