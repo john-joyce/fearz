@@ -205,7 +205,6 @@ def gen_curves(pop):
     return curve, u
 
 def gen_passage_drug_protocol(pop,dc=None):
-
     drug_curve = np.zeros(pop.n_timestep)
     gt = 0 # time in growth phase
     tc = 0 # time for calculating drug concentration
