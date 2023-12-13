@@ -214,8 +214,8 @@ def gen_passage_drug_protocol(pop,dc=None):
             tc = t
         gt += 1
         if dc is None:
-            #drug_curve[t] = pharm_eqn(pop,tc,max_dose=max_dose)
-            drug_curve[t] = pop.convolve_pharm(t)
+            drug_curve[t] = pharm_eqn(pop,tc,max_dose=max_dose)
+            #drug_curve[t] = pop.convolve_pharm(t)
         else:
             drug_curve[t] = dc[t]
     return drug_curve
