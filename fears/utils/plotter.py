@@ -157,12 +157,12 @@ def plot_timecourse(pop,counts_t=None,title_t=None,**kwargs):
     
     xlabels = ax1.get_xticks()
     xlabels = xlabels*pop.timestep_scale
-    xlabels = xlabels/24
+    xlabels = xlabels
     xlabels = np.array(xlabels).astype('int')
     xt = ax1.get_xticks()
     ax1.set_xticks(xt)
     ax1.set_xticklabels(xlabels)
-    ax1.set_xlabel('Days',fontsize=14)
+    ax1.set_xlabel('Hours',fontsize=14)
 
     # get the length of the simulation
     n_timestep = len(counts[:,0])
@@ -541,7 +541,7 @@ def plot_timecourse_to_axes(pop,
     xticks = counts_ax.get_xticks()
     xlabels = xticks
     xlabels = xlabels*pop.timestep_scale
-    xlabels = xlabels/24
+    xlabels = xlabels
     xlabels = np.array(xlabels).astype('int')
     counts_ax.set_xticks(xticks)
     
@@ -892,7 +892,7 @@ def plot_population_count(pop,
     xticks = ax.get_xticks()
     xlabels = xticks
     xlabels = xlabels*pop.timestep_scale
-    xlabels = xlabels/24
+    xlabels = xlabels
     xlabels = np.array(xlabels).astype('int')
     ax.set_xticks(xticks)
     ax.set_xticklabels(xlabels)
@@ -957,7 +957,7 @@ def plot_kaplan_meier(pop,
     
     xticks = ax.get_xticks()
     xlabels = xticks
-    xlabels = xlabels/24
+    xlabels = xlabels
     xlabels = np.array(xlabels).astype('int')
     ax.set_xticks(xticks)
     ax.set_xticklabels(xlabels)
@@ -966,7 +966,7 @@ def plot_kaplan_meier(pop,
     ax.set_xlim(xl)
     ax.set_ylim([0,100])
     ax.set_ylabel(ylabel)
-    ax.set_xlabel('Days')
+    ax.set_xlabel('Hours')
     return ax
 
 def find_zero_crossing(v):
@@ -1286,7 +1286,7 @@ def x_ticks_to_days(pop,ax):
     xticks = ax.get_xticks()
     xlabels = xticks
     xlabels = xlabels*pop.timestep_scale
-    xlabels = xlabels/24
+    xlabels = xlabels
     xlabels = np.array(xlabels).astype('int')
     ax.set_xticks(xticks)
     ax.set_xticklabels(xlabels)
